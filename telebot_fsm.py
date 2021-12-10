@@ -41,7 +41,7 @@ def start(message):
 
 @bot.message_handler(content_types=['str', 'text'])
 def get_payment(message):
-    if bot_tran.state == 'start':
+    if bot_tran.state == 'start':  # checking state transition
         if message.text.lower() == 'большую':
             bot_tran.big()
         elif message.text.lower() == 'маленькую':
@@ -83,7 +83,7 @@ def confirmed(message):
 
 def main():
     try:
-        bot.polling(none_stop=True, interval=0)
+        bot.infinity_polling()
     except Exception:
         pass
 
