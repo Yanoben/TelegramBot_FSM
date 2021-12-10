@@ -82,7 +82,10 @@ def confirmed(message):
 
 
 def main():
-    bot.polling()
+    try:
+        bot.polling(none_stop=True, interval=0)
+    except Exception:
+        pass
 
 
 if __name__ == '__main__':
